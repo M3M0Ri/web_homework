@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="mt-5">{{ author }} - لیست کتاب‌ها</h1>
+    <ul class="list-group">
+        {% for book in books %}
+            <li class="list-group-item"><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></li>
+        {% endfor %}
+    </ul>
+{% endblock %}

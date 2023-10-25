@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>لیست کتاب ها</title>
+</head>
+<body>
+    <div class="container">
+        <h1>لیست کتاب ها</h1>
+        <ul class="book-list">
+            {% for book in books %}
+                <li class="book-item">
+                    <a href="{% url 'book_detail' book.pk %}">{{ book.title }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>

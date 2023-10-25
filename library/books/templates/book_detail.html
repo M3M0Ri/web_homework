@@ -1,0 +1,16 @@
+
+{% block content %}
+    <div class="card mt-5">
+        <div class="card-header">
+            <h5 class="card-title">{{ book.title }}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">نویسنده: <a href="{% url 'author_detail' book.author.id %}">{{ book.author }}</a></p>
+            <p class="card-text">سال چاپ: {{ book.publication_year }}</p>
+            <p class="card-text">انتشارات: {{ book.publisher }}</p>
+            <p class="card-text">شابک: {{ book.ISBN }}</p>
+            <p class="card-text">زبان: {{ book.language }}</p>
+            <p class="card-text">قفسه: {{ book.shelf }}</p>
+        </div>
+    </div>
+{% endblock %}

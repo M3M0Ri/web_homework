@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="card mt-5">
+        <div class="card-header">
+            <h5 class="card-title">{{ author }}</h5>
+        </div>
+        <div class="card-body">
+            <p class="card-text">نام: {{ author.first_name }}</p>
+            <p class="card-text">نام خانوادگی: {{ author.last_name }}</p>
+            <p class="card-text">ملیت: {{ author.nationality }}</p>
+        </div>
+        <div class="card-footer">
+            <h6>کتاب‌های این نویسنده:</h6>
+            <ul class="list-group">
+                {% for book in author.book_set.all %}
+                    <li class="list-group-item"><a href="{% url 'book_detail' book.id %}">{{ book.title }}</a></li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
