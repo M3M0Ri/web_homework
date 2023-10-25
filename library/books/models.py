@@ -21,7 +21,7 @@ class Shelf(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-    publication_year = models.IntegerField(max_length=5)
+    publication_year = models.IntegerField()
     publisher = models.CharField(max_length=200)
     ISBN = models.CharField(max_length=13)
     language = models.CharField(max_length=200)
